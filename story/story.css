@@ -1,0 +1,58 @@
+body {
+  font: 1.2em / 1.5 system-ui;
+  margin: 0 auto;
+  width: 500px;
+  padding: 10px;
+  border:  solid 10px rgb(51, 127, 153);
+  border-radius: 5px;
+  background-color: aquamarine;
+  
+}
+
+fieldset {
+  border: 0;
+}
+
+fieldset,
+legend {
+  padding: 0;
+  margin: 0;
+}
+
+input[type="text"] {
+  margin-top: 5px;
+  padding: 5px;
+  width: 50%;
+  display: block;
+  background-color: aqua;
+}
+input[type="search"] {
+  background-color: aqua;
+}
+
+p {
+  margin-top: 10px;
+  background: #ffc125;
+  padding: 20px;
+  visibility: hidden;
+  font-family: 'Courier New', Courier, monospace;
+}
+.generate{
+  background-color: #ffc125;
+}
+.cerca {
+  background-color: rgb(159, 159, 213);
+}
+.ResetButton {
+  background-color: rgb(149, 191, 228);
+}
+.save {
+  background-color: rgb(221, 136, 210);
+}
+#cerca {
+  color: blue;
+}
+#encrypt-btn {
+  color: rgb(106, 4, 4);
+  background-color: rgb(228, 166, 166);
+}

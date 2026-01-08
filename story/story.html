@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Generatore di Storie</title>
+  <link rel="stylesheet" href="story.css">
+</head>
+<body>
+  
+  <div>
+    <label for="custom-name"><strong>Enter custom name:</strong></label>
+    <input id="custom-name" type="text" placeholder="" />
+  </div>
+
+  <fieldset>
+    <legend><strong>Choose locale:</strong> </legend>
+    <label for="us">US</label>
+    <input id="us" type="radio" name="uk-us" value="us" checked />
+    <label for="uk">UK</label>
+    <input id="uk" type="radio" name="uk-us" value="uk" />
+  </fieldset>
+
+  <!----------BOTTONI---------------->
+  <div>
+    <button class="generate"><strong>Generate random story</strong></button>
+    <button class="ResetButton"><strong>Reset story</strong></button>
+    <button class="save"><strong>💾 Save story</strong></button>
+  </div>
+
+  <!------------font ---->
+  <label for="font-size"><strong>Font size:</strong></label>
+  <input type="number" id="font-size" min="10" max="60" value="16">
+
+  <!--  colore defouolt -->
+  <label class="color" for="color-picker"><strong>Background color:</strong></label>
+  <input type="color" id="color-picker" value="#ffc833">
+
+  <p class="story"></p>
+
+
+  <!--  Nuovo campo per la crittografia -->
+    <div>
+  <label for="shift"><strong>Shift:</strong></label>
+  <input type="number" id="shift" value="1" min="1" max="25">
+  <button id="encrypt-btn"><strong>Encrypt Story</strong></button>
+  <!--cercare le parole-->
+  <div>
+    <label for="search-word"><strong>Serach a word</strong></label>
+    <input type="search" id="search-word"  />
+    <button class="cerca" type="search" id="search-btn"><strong>SEARCH🔍</strong></button>
+  </div>
+
+  <script src="story.js"></script>
+</body>
+</html>
