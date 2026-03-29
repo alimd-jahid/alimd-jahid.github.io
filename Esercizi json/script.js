@@ -6,7 +6,7 @@ const resultsContainer = document.getElementById("resultsContainer");
 
 let pokemonData = [];
 
-
+// FETCH
 function fetchPokemon() {
     fetch("https://cdn.jsdelivr.net/gh/Purukitto/pokemon-data.json/pokedex.json")
         .then((response) => {
@@ -20,7 +20,7 @@ function fetchPokemon() {
         });
 }
 
-
+// SUBMIT (stile house: funzione separata)
 function renderPokemon(e) {
     e.preventDefault();
 
@@ -40,22 +40,21 @@ function renderPokemon(e) {
     displayResults(filteredPokemon);
 }
 
-
+// EVENT
 form.addEventListener("submit", renderPokemon);
 
-
+// DISPLAY (LA TUA VERSIONE IDENTICA)
 function displayResults(results) {
     resultsContainer.innerHTML = "";
 
+    resultsCount.textContent = `Results returned: ${results.length}`;
+
     if (results.length === 0) {
-        resultsCount.innerHTML = "Results returned: 0";
         resultsContainer.innerHTML = "<div class='no-results'>No pokemon found</div>";
         return;
     }
 
-    resultsCount.innerHTML = `Results returned: ${results.length}`;
-
-    results.forEach(pokemon => {
+    function renderPokemon(pokemon) {
         const card = document.createElement("div");
         card.className = "pokemon-card";
 
@@ -66,8 +65,12 @@ function displayResults(results) {
         `;
 
         resultsContainer.appendChild(card);
-    });
+    }
+
+    for (let pokemon of results) {
+        renderPokemon(pokemon);
+    }
 }
 
-
+// LOAD
 window.addEventListener("load", fetchPokemon);
