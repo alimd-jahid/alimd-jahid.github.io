@@ -6,7 +6,7 @@ const resultsContainer = document.getElementById("resultsContainer");
 
 let pokemonData = [];
 
-// FETCH DATA
+
 function fetchPokemon() {
     fetch("https://cdn.jsdelivr.net/gh/Purukitto/pokemon-data.json/pokedex.json")
         .then((response) => {
@@ -20,7 +20,7 @@ function fetchPokemon() {
         });
 }
 
-// FUNZIONE SEPARATA (stile house)
+
 function renderPokemon(e) {
     e.preventDefault();
 
@@ -40,10 +40,10 @@ function renderPokemon(e) {
     displayResults(filteredPokemon);
 }
 
-// EVENT LISTENER
+
 form.addEventListener("submit", renderPokemon);
 
-// DISPLAY
+
 function displayResults(results) {
     resultsContainer.innerHTML = "";
 
@@ -69,5 +69,5 @@ function displayResults(results) {
     });
 }
 
-// LOAD
+
 window.addEventListener("load", fetchPokemon);
