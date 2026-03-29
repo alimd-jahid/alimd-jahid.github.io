@@ -9,15 +9,19 @@ let pokemonData = [];
 // FETCH DATA
 function fetchPokemon() {
     fetch("https://cdn.jsdelivr.net/gh/Purukitto/pokemon-data.json/pokedex.json")
-        .then(res => res.json())
-        .then(data => {
-            pokemonData = data;
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`HTTP error: ${response.status}`);
+            }
+            return response.json();
         })
-        .catch(err => console.error(err));
+        .then((data) => {
+            pokemonData = data;
+        });
 }
 
-// SUBMIT
-form.addEventListener("submit", function (e) {
+// FUNZIONE SEPARATA (stile house)
+function renderPokemon(e) {
     e.preventDefault();
 
     const species = speciesInput.value.toLowerCase();
@@ -34,7 +38,10 @@ form.addEventListener("submit", function (e) {
     });
 
     displayResults(filteredPokemon);
-});
+}
+
+// EVENT LISTENER
+form.addEventListener("submit", renderPokemon);
 
 // DISPLAY
 function displayResults(results) {
@@ -62,5 +69,5 @@ function displayResults(results) {
     });
 }
 
-// LOAD DATA
+// LOAD
 window.addEventListener("load", fetchPokemon);
