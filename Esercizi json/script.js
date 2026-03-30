@@ -6,7 +6,7 @@ const resultsContainer = document.getElementById("resultsContainer");
 
 let pokemonData = [];
 
-// FETCH
+
 function fetchPokemon() {
     fetch("https://cdn.jsdelivr.net/gh/Purukitto/pokemon-data.json/pokedex.json")
         .then((response) => {
@@ -20,7 +20,7 @@ function fetchPokemon() {
         });
 }
 
-// SUBMIT (stile house: funzione separata)
+
 function renderPokemon(e) {
     e.preventDefault();
 
@@ -40,10 +40,10 @@ function renderPokemon(e) {
     displayResults(filteredPokemon);
 }
 
-// EVENT
+
 form.addEventListener("submit", renderPokemon);
 
-// DISPLAY (LA TUA VERSIONE IDENTICA)
+
 function displayResults(results) {
     resultsContainer.innerHTML = "";
 
